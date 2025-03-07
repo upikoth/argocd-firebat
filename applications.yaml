@@ -1,18 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: my-apps
   namespace: argocd
 spec:
-  project: default
-  source:
-    repoURL: https://github.com/upikoth/argocd-firebat.git
-    path: applications
-    targetRevision: main
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  generators:
+    - git:
+        repoURL: https://github.com/upikoth/argocd-firebat.git
+        revision: main
+        directories:
+          - path: "applications/*"
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/upikoth/argocd-firebat.git
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
