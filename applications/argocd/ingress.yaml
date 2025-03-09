@@ -5,7 +5,6 @@ metadata:
   namespace: argocd
   annotations:
     kubernetes.io/ingress.class: traefik
-    cert-manager.io/cluster-issuer: letsencrypt-cluster
     traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
     traefik.ingress.kubernetes.io/router.middlewares: default-redirect-to-https@kubernetescrd
 spec:
@@ -23,4 +22,4 @@ spec:
   tls:
     - hosts:
         - argocd.upikoth.dev
-      secretName: argocd-tls
+      secretName: certificate-tls
