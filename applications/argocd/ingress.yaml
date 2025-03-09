@@ -6,6 +6,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: traefik
     cert-manager.io/cluster-issuer: letsencrypt-cluster
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-to-https@kubernetescrd
 spec:
   rules:
     - host: argocd.firebat
@@ -17,7 +19,7 @@ spec:
               service:
                 name: argocd-server
                 port:
-                  name: https
+                  number: 443
   tls:
     - hosts:
         - argocd.firebat
