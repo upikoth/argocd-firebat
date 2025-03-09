@@ -21,4 +21,4 @@ spec:
   tls:
     - hosts:
         - argocd.upikoth.dev
-      secretName: cert-manager/certificate-tls
+      secretName: argocd-certificate
