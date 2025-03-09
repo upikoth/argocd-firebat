@@ -10,7 +10,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: default-redirect-to-https@kubernetescrd
 spec:
   rules:
-    - host: argocd.firebat
+    - host: argocd.upikoth.dev
       http:
         paths:
           - path: /
@@ -22,5 +22,5 @@ spec:
                   number: 443
   tls:
     - hosts:
-        - argocd.firebat
+        - argocd.upikoth.dev
       secretName: argocd-tls
