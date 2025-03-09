@@ -4,8 +4,8 @@ metadata:
   name: certificate-tls
 spec:
   secretName: certificate-tls
-  duration: 8760h
-  renewBefore: 720h
+  duration: 8760h0m0s
+  renewBefore: 720h0m0s
   commonName: argocd.upikoth.dev
   dnsNames:
     - argocd.upikoth.dev
