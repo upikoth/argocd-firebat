@@ -34,7 +34,7 @@ spec:
           image: grafana/grafana:latest
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               protocol: TCP
           readinessProbe:
             failureThreshold: 3
@@ -72,10 +72,10 @@ metadata:
   name: grafana
 spec:
   ports:
-    - port: 80
+    - port: 4444
       protocol: TCP
       name: http
-      targetPort: 8080
+      targetPort: 80
   selector:
     app: grafana
   sessionAffinity: None
