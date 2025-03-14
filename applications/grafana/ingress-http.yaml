@@ -18,4 +18,4 @@ spec:
               service:
                 name: grafana
                 port:
-                  name: http-grafana
+                  name: http

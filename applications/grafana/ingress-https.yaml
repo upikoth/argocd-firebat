@@ -17,7 +17,7 @@ spec:
               service:
                 name: grafana
                 port:
-                  name: http-grafana
+                  name: http
   tls:
     - hosts:
         - grafana.upikoth.dev
