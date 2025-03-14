@@ -72,10 +72,10 @@ metadata:
   name: grafana
 spec:
   ports:
-    - port: 3000
+    - port: 4444
       protocol: TCP
       name: http
-      targetPort: 4444
+      targetPort: 3000
   selector:
     app: grafana
   sessionAffinity: None
