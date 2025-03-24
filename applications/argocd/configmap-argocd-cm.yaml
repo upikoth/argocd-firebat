@@ -4,12 +4,12 @@ metadata:
   name: argocd-cm
   namespace: argocd
 data:
-  admin.enabled: 'true'
+  admin.enabled: "true"
   application.instanceLabelKey: argocd.argoproj.io/instance
-  application.sync.impersonation.enabled: 'false'
-  exec.enabled: 'false'
-  server.rbac.log.enforce.enable: 'false'
-  statusbadge.enabled: 'false'
+  application.sync.impersonation.enabled: "false"
+  exec.enabled: "false"
+  server.rbac.log.enforce.enable: "false"
+  statusbadge.enabled: "false"
   timeout.hard.reconciliation: 0s
   timeout.reconciliation: 180s
   url: https://argocd.upikoth.dev

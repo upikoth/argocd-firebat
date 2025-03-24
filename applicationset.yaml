@@ -11,16 +11,16 @@ spec:
           - path: "applications/*"
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: "{{path.basename}}"
     spec:
       project: default
       source:
         repoURL: https://github.com/upikoth/argocd-firebat.git
         targetRevision: main
-        path: '{{path}}'
+        path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: "{{path.basename}}"
       syncPolicy:
         automated:
           prune: true
