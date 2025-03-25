@@ -60,6 +60,11 @@ data:
     global:
       scrape_interval: 15s
       evaluation_interval: 15s
+    storage:
+      tsdb:
+        retention.size: 8GB
+        path: /prometheus
+        max-block-duration: 2h
     scrape_configs:
       - job_name: 'node-exporter'
         static_configs:
