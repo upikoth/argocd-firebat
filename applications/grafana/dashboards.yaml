@@ -29,7 +29,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -103,7 +103,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\"}[5m])) * 100)",
@@ -119,7 +119,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "prometheus"
           },
           "fieldConfig": {
             "defaults": {
@@ -193,7 +193,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "prometheus"
               },
               "editorMode": "code",
               "expr": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes",
