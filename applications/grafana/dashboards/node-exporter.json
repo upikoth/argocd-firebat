@@ -30,7 +30,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus1"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -104,7 +104,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus1"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\", instance=\"$node\"}[5m])) * 100)",
@@ -120,7 +120,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "prometheus1"
+        "uid": "prometheus"
       },
       "fieldConfig": {
         "defaults": {
@@ -194,7 +194,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "prometheus1"
+            "uid": "prometheus"
           },
           "editorMode": "code",
           "expr": "node_memory_MemTotal_bytes{instance=\"$node\"} - node_memory_MemFree_bytes{instance=\"$node\"} - node_memory_Buffers_bytes{instance=\"$node\"} - node_memory_Cached_bytes{instance=\"$node\"}",
@@ -241,7 +241,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "prometheus1"
+          "uid": "prometheus"
         },
         "definition": "label_values(node_uname_info, instance)",
         "hide": 0,
@@ -284,7 +284,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Node Metrics",
+  "title": "Node Metrics 2",
   "uid": "node-metrics",
   "version": 1,
   "weekStart": ""
