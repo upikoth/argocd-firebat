@@ -7,6 +7,7 @@ spec:
   instanceSelector:
     matchLabels:
       app: grafana
+      grafana.integreatly.org/instance: "true"
   json: |-
     {
       "annotations": {
