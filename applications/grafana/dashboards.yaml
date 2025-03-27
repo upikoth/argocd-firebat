@@ -1,8 +1,8 @@
-apiVersion: grafana.integreatly.org/v1beta1
+apiVersion: integreatly.org/v1alpha1
 kind: GrafanaDashboard
 metadata:
   name: grafana-dashboards
-  namespace: grafana
+  namespace: grafana-operator
 spec:
   json: |-
     {
