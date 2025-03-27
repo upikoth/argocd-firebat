@@ -15,6 +15,7 @@ kind: Deployment
 metadata:
   labels:
     app: grafana
+    grafana.integreatly.org/instance: "true"
   name: grafana
   annotations:
     grafana.integreatly.org/instance: "true"
