@@ -4,7 +4,9 @@ metadata:
   name: grafana-dashboard-node-exporter
   namespace: grafana
 spec:
-  instanceSelector: {}
+  instanceSelector:
+    matchLabels:
+      app: grafana
   json: |-
     {
       "annotations": {
