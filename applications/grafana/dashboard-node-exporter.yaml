@@ -1,7 +1,7 @@
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
-  name: grafana-dashboards
+  name: grafana-dashboard-node-exporter
   namespace: grafana-operator
 spec:
   json: |-
