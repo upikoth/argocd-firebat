@@ -3,10 +3,10 @@ kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-node-exporter
   namespace: grafana-operator
-spec:
-instanceSelector:
-  matchLabels:
+  labels:
     app: grafana
+spec:
+instanceSelector: {}
 json: |-
   {
     "annotations": {

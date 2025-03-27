@@ -16,6 +16,8 @@ metadata:
   labels:
     app: grafana
   name: grafana
+  annotations:
+    grafana.integreatly.org/instance: "true"
 spec:
   selector:
     matchLabels:
