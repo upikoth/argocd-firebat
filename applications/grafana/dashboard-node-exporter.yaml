@@ -2,9 +2,7 @@ apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-node-exporter
-  namespace: grafana-operator
-  labels:
-    app: grafana
+  namespace: grafana
 spec:
   instanceSelector: {}
   json: |-
