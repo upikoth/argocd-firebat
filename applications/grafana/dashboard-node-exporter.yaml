@@ -6,4 +6,4 @@ spec:
   instanceSelector:
     matchLabels:
       app: grafana
-  url: "https://raw.githubusercontent.com/grafana-operator/grafana-operator/master/examples/dashboard_from_url/dashboard.json"
+  url: "https://raw.githubusercontent.com/upikoth/argocd-firebat/refs/heads/main/applications/grafana/dashboards/node-exporter.json"
