@@ -13,4 +13,4 @@ spec:
       disable_signout_menu: "true"
       disable_signout_button: "true"
       anonymous:
-        enabled: true
+        enabled: "true"
