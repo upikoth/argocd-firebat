@@ -2,12 +2,11 @@ apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-node-exporter
-  namespace: grafana-operator
+  namespace: grafana
 spec:
   instanceSelector:
     matchLabels:
       app: grafana
-      grafana.integreatly.org/instance: "true"
   json: |-
     {
       "annotations": {
