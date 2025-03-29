@@ -8,10 +8,3 @@ spec:
   config:
     log:
       mode: "console"
-    auth:
-      disable_login_form: "true"
-      disable_signout_menu: "true"
-      disable_signout_button: "true"
-    auth.anonymous:
-      enabled: "true"
-      org_role: "Admin"
