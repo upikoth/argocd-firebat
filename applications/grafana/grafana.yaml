@@ -9,5 +9,5 @@ spec:
     log:
       mode: "console"
     auth:
-      disable_login_form: true
-      disable_signout_menu: true
+      disable_login_form: "true"
+      disable_signout_menu: "true"
