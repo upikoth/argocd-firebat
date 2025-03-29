@@ -11,3 +11,6 @@ spec:
     auth:
       disable_login_form: "true"
       disable_signout_menu: "true"
+      disable_signout_button: "true"
+      anonymous:
+        enabled: true
