@@ -2,7 +2,6 @@ apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-node-exporter
-  namespace: grafana
 spec:
   instanceSelector:
     matchLabels:
@@ -212,7 +211,7 @@ spec:
       },
       "timepicker": {},
       "timezone": "",
-      "title": "Node Metrics 22",
+      "title": "Node Metrics 223",
       "version": 1,
       "weekStart": ""
     }
