@@ -447,7 +447,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "kube_pod_container_resource_requests_cpu_cores",
+          "expr": "sum(kube_pod_container_resource_requests{resource=\"cpu\"}) by (namespace, pod, container)",
           "interval": "",
           "legendFormat": "{{namespace}}/{{pod}}/{{container}}",
           "refId": "A"
@@ -534,7 +534,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "kube_pod_container_resource_requests_memory_bytes",
+          "expr": "sum(kube_pod_container_resource_requests{resource=\"memory\"}) by (namespace, pod, container)",
           "interval": "",
           "legendFormat": "{{namespace}}/{{pod}}/{{container}}",
           "refId": "A"
@@ -621,7 +621,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "kube_pod_container_resource_limits_cpu_cores",
+          "expr": "sum(kube_pod_container_resource_limits{resource=\"cpu\"}) by (namespace, pod, container)",
           "interval": "",
           "legendFormat": "{{namespace}}/{{pod}}/{{container}}",
           "refId": "A"
@@ -708,7 +708,7 @@
             "type": "prometheus",
             "uid": "prometheus"
           },
-          "expr": "kube_pod_container_resource_limits_memory_bytes",
+          "expr": "sum(kube_pod_container_resource_limits{resource=\"memory\"}) by (namespace, pod, container)",
           "interval": "",
           "legendFormat": "{{namespace}}/{{pod}}/{{container}}",
           "refId": "A"
