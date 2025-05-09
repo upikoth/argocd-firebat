@@ -385,7 +385,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
+        "w": 8,
         "x": 0,
         "y": 5
       },
@@ -498,8 +498,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 12,
-        "x": 12,
+        "w": 8,
+        "x": 8,
         "y": 5
       },
       "id": 8,
@@ -549,6 +549,111 @@
       ],
       "title": "Memory Resources",
       "description": "Shows memory resources on the node:\n- Requests: Guaranteed memory for pods\n- Limits: Maximum memory pods can use\n- Allocatable: Total available memory on the node",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 20,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 5
+      },
+      "id": 9,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "kube_persistentvolumeclaim_resource_requests_storage_bytes * on(namespace, persistentvolumeclaim) group_left(pod) kube_pod_spec_volumes_persistentvolumeclaims_info * on(pod) group_left(node) kube_pod_info{node=~\"$node\"}",
+          "legendFormat": "{{persistentvolumeclaim}} ({{namespace}}) - Requested",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "editorMode": "code",
+          "expr": "kube_persistentvolume_capacity_bytes * on(persistentvolume) group_left(namespace, persistentvolumeclaim) label_replace(kube_persistentvolumeclaim_info, \"persistentvolume\", \"$1\", \"volumename\", \"(.+)\") * on(namespace, persistentvolumeclaim) group_left(pod) kube_pod_spec_volumes_persistentvolumeclaims_info * on(pod) group_left(node) kube_pod_info{node=~\"$node\"}",
+          "legendFormat": "{{persistentvolumeclaim}} ({{namespace}}) - Allocated",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "PVC Storage",
+      "description": "Shows storage size for each PVC in the cluster:\n- Requested: Size requested by PVC\n- Allocated: Actual size allocated to PVC",
       "type": "timeseries"
     }
   ],
