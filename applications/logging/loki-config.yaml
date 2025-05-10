@@ -53,7 +53,6 @@ data:
       retention_enabled: true
       retention_delete_delay: 2h
       retention_delete_worker_count: 150
-      retention_period: 0s
     storage:
       engine: filesystem
       filesystem:
@@ -78,7 +77,6 @@ data:
         delete_delay: 2h
         working_directory: /data/loki/retention
         delete_worker_count: 150
-        retention_period: 0s
         max_entries: 2000000
         target_size_bytes: 17179869184  # 16GB
         max_size_bytes: 19327352832     # 18GB
