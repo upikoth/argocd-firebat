@@ -31,6 +31,14 @@ data:
         directory: /data/loki/index
       filesystem:
         directory: /data/loki/chunks
+      retention:
+        enabled: true
+        delete_delay: 2h
+        working_directory: /data/loki/retention
+        delete_worker_count: 150
+        max_entries: 2000000
+        target_size_bytes: 17179869184  # 16GB
+        max_size_bytes: 19327352832     # 18GB
     limits_config:
       enforce_metric_name: false
       reject_old_samples: true
@@ -50,33 +58,3 @@ data:
       working_directory: /data/loki/compactor
       shared_store: filesystem
       compaction_interval: 10m
-      retention_enabled: true
-      retention_delete_delay: 2h
-      retention_delete_worker_count: 150
-    storage:
-      engine: filesystem
-      filesystem:
-        directory: /data/loki/chunks
-      boltdb:
-        directory: /data/loki/index
-      cache:
-        enable_fifocache: true
-        validity: 24h
-        default_validity: 12h
-        background: true
-        max_size_items: 2048
-        ttl: 24h
-      index:
-        prefix: index_
-        period: 24h
-      chunks:
-        prefix: chunks_
-        period: 24h
-      retention:
-        enabled: true
-        delete_delay: 2h
-        working_directory: /data/loki/retention
-        delete_worker_count: 150
-        max_entries: 2000000
-        target_size_bytes: 17179869184  # 16GB
-        max_size_bytes: 19327352832     # 18GB
