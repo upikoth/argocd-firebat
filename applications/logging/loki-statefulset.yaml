@@ -7,11 +7,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: loki
+      app.kubernetes.io/name: loki-stack
+      app.kubernetes.io/component: logging
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: loki
+        app.kubernetes.io/name: loki-stack
+        app.kubernetes.io/component: logging
     spec:
       containers:
         - name: loki
