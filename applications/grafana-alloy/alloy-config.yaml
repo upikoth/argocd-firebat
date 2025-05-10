@@ -8,6 +8,9 @@ data:
       log_level: debug
 
     metrics:
+      global:
+        remote_write:
+          - url: http://prometheus.prometheus.svc.cluster.local:9090/api/v1/write
       configs:
         - name: integrations
           scrape_configs:
@@ -15,35 +18,26 @@ data:
               kubernetes_sd_configs:
                 - role: pod
               relabel_configs:
-                - source_labels:
-                    - __meta_kubernetes_pod_label_app_kubernetes_io_name
-                  target_label: app
-                - source_labels:
-                    - __meta_kubernetes_pod_node_name
-                  target_label: node
-                - source_labels:
-                    - __meta_kubernetes_pod_name
-                  target_label: pod
-                - source_labels:
-                    - __meta_kubernetes_pod_container_name
-                  target_label: container
-                - source_labels:
-                    - __meta_kubernetes_namespace
-                  target_label: namespace
-                - action: replace
-                  target_label: job
-                  replacement: kubernetes-pods
-                - action: replace
-                  source_labels:
-                    - __meta_kubernetes_pod_uid
-                    - __meta_kubernetes_pod_container_name
-                  target_label: __path__
-                  separator: /
-                  replacement: /var/log/pods/$1/*/$2/*.log
-                - action: keep
-                  source_labels:
-                    - __path__
-                  regex: .+
+                - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+                  action: keep
+                  regex: true
+                - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+                  action: replace
+                  target_label: __metrics_path__
+                  regex: (.+)
+                - source_labels: [__address__, __meta_kubernetes_pod_annotation_prometheus_io_port]
+                  action: replace
+                  regex: ([^:]+)(?::\d+)?;(\d+)
+                  replacement: $1:$2
+                  target_label: __address__
+                - action: labelmap
+                  regex: __meta_kubernetes_pod_label_(.+)
+                - source_labels: [__meta_kubernetes_namespace]
+                  action: replace
+                  target_label: kubernetes_namespace
+                - source_labels: [__meta_kubernetes_pod_name]
+                  action: replace
+                  target_label: kubernetes_pod_name
     logs:
       configs:
         - name: kubernetes-logs
@@ -86,7 +80,7 @@ data:
               pipeline_stages:
                 - docker: {}
           clients:
-            - url: http://loki:3100/loki/api/v1/push
+            - url: http://loki.loki.svc.cluster.local:3100/loki/api/v1/push
               batchwait: 1s
               batchsize: 1024
               timeout: 10s
