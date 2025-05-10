@@ -9,7 +9,7 @@ resources:
 
 commonLabels:
   app.kubernetes.io/part-of: observability
-  app.kubernetes.io/component: logging
+  app.kubernetes.io/component: loki
   app.kubernetes.io/name: loki-stack
   app.kubernetes.io/instance: loki-stack
   app.kubernetes.io/managed-by: kustomize
