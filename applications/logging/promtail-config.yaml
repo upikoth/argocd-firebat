@@ -20,6 +20,8 @@ data:
           min_period: 1s
           max_period: 5s
 
+    log_level: debug
+
     scrape_configs:
       - job_name: kubernetes-pods-name
         kubernetes_sd_configs:

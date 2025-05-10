@@ -27,7 +27,7 @@ spec:
               mountPath: /etc/promtail
             - name: varlog
               mountPath: /var/log
-            - name: pods
+            - name: podlogs
               mountPath: /var/log/pods
               readOnly: true
           resources:
@@ -44,6 +44,6 @@ spec:
         - name: varlog
           hostPath:
             path: /var/log
-        - name: pods
+        - name: podlogs
           hostPath:
             path: /var/log/pods
