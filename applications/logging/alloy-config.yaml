@@ -6,8 +6,8 @@ data:
   config.yaml: |
     server:
       log_level: info
-      listen_port: 3100
-      listen_address: 0.0.0.0
+      port: 3100
+      host: 0.0.0.0
 
     metrics:
       configs:
