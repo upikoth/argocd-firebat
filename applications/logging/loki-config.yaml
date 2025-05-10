@@ -31,14 +31,6 @@ data:
         directory: /data/loki/index
       filesystem:
         directory: /data/loki/chunks
-      retention:
-        enabled: true
-        delete_delay: 2h
-        working_directory: /data/loki/retention
-        delete_worker_count: 150
-        max_entries: 2000000
-        target_size_bytes: 17179869184  # 16GB
-        max_size_bytes: 19327352832     # 18GB
     limits_config:
       enforce_metric_name: false
       reject_old_samples: true
@@ -53,7 +45,7 @@ data:
       max_look_back_period: 0s
     table_manager:
       retention_deletes_enabled: true
-      retention_period: 0s
+      retention_period: 168h
     compactor:
       working_directory: /data/loki/compactor
       shared_store: filesystem
