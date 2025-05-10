@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: promtail
+  name: alloy
 spec:
   selector:
     matchLabels:
@@ -13,18 +13,18 @@ spec:
         app.kubernetes.io/name: loki-stack
         app.kubernetes.io/component: logging
     spec:
-      serviceAccountName: promtail
+      serviceAccountName: alloy
       containers:
-        - name: promtail
-          image: grafana/promtail:2.9.2
+        - name: alloy
+          image: grafana/agent:latest
           args:
-            - -config.file=/etc/promtail/promtail.yaml
+            - -config.file=/etc/agent/config.yaml
           ports:
-            - containerPort: 9080
+            - containerPort: 3100
               name: http
           volumeMounts:
-            - name: promtail-config
-              mountPath: /etc/promtail
+            - name: alloy-config
+              mountPath: /etc/agent
             - name: varlog
               mountPath: /var/log
             - name: podlogs
@@ -38,9 +38,9 @@ spec:
               cpu: 100m
               memory: 256Mi
       volumes:
-        - name: promtail-config
+        - name: alloy-config
           configMap:
-            name: promtail-config
+            name: alloy-config
         - name: varlog
           hostPath:
             path: /var/log
