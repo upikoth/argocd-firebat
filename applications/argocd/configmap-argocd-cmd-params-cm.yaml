@@ -3,6 +3,11 @@ kind: ConfigMap
 metadata:
   name: argocd-cmd-params-cm
   namespace: argocd
+labels:
+  app.kubernetes.io/instance: argocd
+  app.kubernetes.io/managed-by: Helm
+  app.kubernetes.io/name: argocd-cmd-params-cm
+  app.kubernetes.io/part-of: argocd
 data:
   application.namespaces: ""
   applicationsetcontroller.enable.leader.election: "false"
