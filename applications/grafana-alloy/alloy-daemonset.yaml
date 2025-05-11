@@ -18,7 +18,7 @@ spec:
         - name: alloy
           image: grafana/agent:latest
           args:
-            - -config.file=/etc/agent/config.yaml
+            - -config.file=/etc/agent/config.alloy
           ports:
             - containerPort: 3100
               name: http
