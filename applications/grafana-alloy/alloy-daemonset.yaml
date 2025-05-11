@@ -16,7 +16,7 @@ spec:
       serviceAccountName: alloy
       containers:
         - name: alloy
-          image: grafana/agent:latest
+          image: grafana/alloy:latest
           args:
             - -config.file=/etc/agent/config.alloy
           ports:
