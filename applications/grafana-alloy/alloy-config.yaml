@@ -35,7 +35,7 @@ data:
 
     loki.source.file "log_scrape" {
       targets    = local.file_match.pods.targets
-      forward_to = [loki.process.grafana_loki.receiver]
+      forward_to = [loki.write.grafana_loki.receiver]
       tail_from_end = true
     }
 
