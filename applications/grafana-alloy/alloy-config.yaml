@@ -9,7 +9,7 @@ data:
     }
 
     local.file_match "local_files" {
-      targets = [{"__path__" = "/var/log/pods/*/*/*.log"}]
+      path_targets = [{"__path__" = "/var/log/pods/*/*/*.log"}]
       sync_period = "5s"
     }
 
