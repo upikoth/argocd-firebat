@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: alloy-config
 data:
-  config.alloy: |
+  config.alloy: |-
     logging {
       level = "debug"
     }
