@@ -9,7 +9,5 @@ resources:
 
 commonLabels:
   app.kubernetes.io/part-of: observability
-  app.kubernetes.io/component: agent
   app.kubernetes.io/name: grafana-alloy
-  app.kubernetes.io/instance: grafana-alloy
   app.kubernetes.io/managed-by: kustomize
