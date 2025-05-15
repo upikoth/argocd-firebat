@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: alloy-config
+  name: grafana-alloy-config
 data:
   config.alloy: |-
     logging {

@@ -1,11 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kube-state-metrics
-  namespace: kube-state-metrics
+  name: kube-state-metrics-deployment
   labels:
     app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/version: v2.9.2
 spec:
   replicas: 1
   selector:
@@ -16,9 +14,9 @@ spec:
       labels:
         app.kubernetes.io/name: kube-state-metrics
     spec:
-      serviceAccountName: kube-state-metrics
+      serviceAccountName: kube-state-metrics-service-account
       containers:
-        - name: kube-state-metrics
+        - name: kube-state-metrics-container
           image: registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.9.2
           args:
             - --host=0.0.0.0

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: alloy-daemon-set
+  name: grafana-alloy-daemon-set
 spec:
   selector:
     matchLabels:
@@ -11,9 +11,9 @@ spec:
       labels:
         app.kubernetes.io/name: grafana-alloy
     spec:
-      serviceAccountName: alloy-service-account
+      serviceAccountName: grafana-alloy-service-account
       containers:
-        - name: alloy
+        - name: grafana-alloy-container
           image: grafana/alloy:v1.8.3
           args:
             - run
@@ -22,7 +22,7 @@ spec:
             - containerPort: 3100
               name: http
           volumeMounts:
-            - name: alloy-config
+            - name: grafana-alloy-config
               mountPath: /etc/agent
             - name: varlog
               mountPath: /var/log
@@ -37,9 +37,9 @@ spec:
               cpu: 100m
               memory: 256Mi
       volumes:
-        - name: alloy-config
+        - name: grafana-alloy-config
           configMap:
-            name: alloy-config
+            name: grafana-alloy-config
         - name: varlog
           hostPath:
             path: /var/log
