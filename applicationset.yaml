@@ -8,7 +8,7 @@ spec:
         repoURL: https://github.com/upikoth/argocd-firebat.git
         revision: main
         directories:
-          - path: "applications/*"
+          - path: "applications/*/*"
   template:
     metadata:
       name: "{{path.basename}}"
@@ -20,7 +20,7 @@ spec:
         path: "{{path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: "{{path.basename}}"
+        namespace: "{{path.dirname | path.basename}}"
       syncPolicy:
         automated:
           prune: true
