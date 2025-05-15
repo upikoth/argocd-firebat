@@ -2,7 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: grafana-ingress-http
-  namespace: grafana
   annotations:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: web
@@ -16,6 +15,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: grafana
+                name: grafana-service
                 port:
                   name: http
