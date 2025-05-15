@@ -48,7 +48,7 @@ data:
 
       stage.labels {
         values = {
-          "level" = "extracted_level",
+          "log_level" = "extracted_level",
         }
       }
 
