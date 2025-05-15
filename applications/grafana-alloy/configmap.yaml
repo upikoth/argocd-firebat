@@ -35,8 +35,24 @@ data:
 
     loki.source.file "log_scrape" {
       targets    = local.file_match.pods.targets
-      forward_to = [loki.write.grafana_loki.receiver]
+      forward_to = [loki.process.add_labels.receiver]
       tail_from_end = true
+    }
+
+    loki.process "add_labels" {
+      stage.logfmt {
+        mapping = {
+          "extracted_level" = "level",
+        }
+      }
+
+      stage.labels {
+        values = {
+          "level" = "extracted_level",
+        }
+      }
+
+      forward_to = [loki.write.grafana_loki.receiver]
     }
 
     loki.write "grafana_loki" {
