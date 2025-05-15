@@ -29,6 +29,7 @@ spec:
           image: grafana/loki:3.5.0
           args:
             - -config.file=/etc/loki/loki.yaml
+            - -config.expand-env=true
           securityContext:
             runAsUser: 10001
             runAsGroup: 10001
