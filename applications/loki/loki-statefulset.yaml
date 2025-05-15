@@ -26,7 +26,7 @@ spec:
               mountPath: /data
       containers:
         - name: loki
-          image: grafana/loki:2.9.2
+          image: grafana/loki:latest
           args:
             - -config.file=/etc/loki/loki.yaml
           securityContext:
