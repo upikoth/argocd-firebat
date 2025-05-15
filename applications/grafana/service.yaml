@@ -9,5 +9,5 @@ spec:
       name: http
       targetPort: 3000
   selector:
-    app.kubernetes.io/name: grafana
+    app: grafana
   sessionAffinity: None
