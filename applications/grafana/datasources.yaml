@@ -2,10 +2,11 @@ apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDatasource
 metadata:
   name: grafana-datasource-prometheus
+  namespace: grafana
 spec:
   instanceSelector:
     matchLabels:
-      app: grafana
+      app: "grafana"
   datasource:
     name: prometheus
     type: prometheus
@@ -17,10 +18,11 @@ apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDatasource
 metadata:
   name: grafana-datasource-loki
+  namespace: grafana
 spec:
   instanceSelector:
     matchLabels:
-      app: grafana
+      app: "grafana"
   datasource:
     name: loki
     type: loki

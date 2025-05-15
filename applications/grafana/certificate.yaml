@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: grafana-certificate
+  namespace: grafana
 spec:
   secretName: grafana-certificate
   duration: 8760h0m0s # 1 year
