@@ -39,6 +39,9 @@ data:
         enabled: true
         dir: /data/loki/wal
 
+    pattern_ingester:
+      enabled: true
+
     compactor:
       working_directory: /data/loki/compactor
       compaction_interval: 10m
