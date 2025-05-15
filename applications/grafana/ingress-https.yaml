@@ -14,7 +14,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: grafana
+                name: grafana-service
                 port:
                   name: http
   tls:
