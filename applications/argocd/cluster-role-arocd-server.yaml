@@ -13,8 +13,6 @@ metadata:
   annotations:
     meta.helm.sh/release-name: argocd
     meta.helm.sh/release-namespace: argocd
-  selfLink: /apis/rbac.authorization.k8s.io/v1/clusterroles/argocd-server
-spec: {}
 rules:
   - verbs:
       - delete
