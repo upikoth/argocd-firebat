@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
   "assignees": ["upikoth"],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "argocd": {
+    "managerFilePatterns": ["/\\.yaml$/"]
+  }
 }
