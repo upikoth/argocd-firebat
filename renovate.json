@@ -3,7 +3,7 @@
   "extends": ["config:recommended"],
   "assignees": ["upikoth"],
   "rangeStrategy": "bump",
-  "argocd": {
+  "kubernetes": {
     "managerFilePatterns": ["**/*.yaml"]
   }
 }
