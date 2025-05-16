@@ -17,7 +17,7 @@ spec:
       hostPID: true
       containers:
         - name: node-exporter-container
-          image: prom/node-exporter:v1.6.1
+          image: prom/node-exporter:v1.9.1
           args:
             - --path.procfs=/host/proc
             - --path.sysfs=/host/sys
