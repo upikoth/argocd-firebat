@@ -4,6 +4,6 @@
   "assignees": ["upikoth"],
   "rangeStrategy": "bump",
   "argocd": {
-    "managerFilePatterns": ["*.yaml"]
+    "managerFilePatterns": ["**/*.yaml"]
   }
 }
