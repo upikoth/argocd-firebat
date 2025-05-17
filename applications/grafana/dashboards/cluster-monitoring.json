@@ -86,7 +86,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -165,7 +165,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -245,7 +245,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -326,7 +326,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -402,7 +402,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -479,7 +479,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -553,7 +553,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -629,7 +629,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -704,7 +704,7 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -792,7 +792,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -891,7 +891,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -981,7 +981,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1085,7 +1085,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1190,7 +1190,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1317,7 +1317,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1422,7 +1422,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1526,7 +1526,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1649,7 +1649,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1752,7 +1752,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1867,7 +1867,7 @@
       "type": "row"
     },
     {
-      "datasource": "${prometheus}",
+      "datasource": "${datasource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -2021,7 +2021,7 @@
       {
         "allValue": ".*",
         "current": {},
-        "datasource": "${prometheus}",
+        "datasource": "${datasource}",
         "definition": "label_values(node)",
         "description": null,
         "error": null,
@@ -2047,7 +2047,7 @@
       {
         "allValue": ".*",
         "current": {},
-        "datasource": "${prometheus}",
+        "datasource": "${datasource}",
         "definition": "",
         "description": null,
         "error": null,

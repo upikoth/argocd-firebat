@@ -1,18 +1,18 @@
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
-  name: grafana-dashboard-node-exporter
+  name: grafana-dashboard-node-monitoring
 spec:
   folder: "General"
   instanceSelector:
     matchLabels:
       app: grafana
-  url: "https://raw.githubusercontent.com/upikoth/argocd-firebat/refs/heads/main/applications/grafana/dashboards/node-exporter.json"
+  url: "https://raw.githubusercontent.com/upikoth/argocd-firebat/refs/heads/main/applications/grafana/dashboards/node-monitoring.json"
 ---
 apiVersion: grafana.integreatly.org/v1beta1
 kind: GrafanaDashboard
 metadata:
-  name: grafana-dashboard-k3s-nodes
+  name: grafana-dashboard-cluster-monitoring
 spec:
   folder: "General"
   instanceSelector:
