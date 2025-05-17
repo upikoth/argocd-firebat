@@ -18,4 +18,4 @@ spec:
   instanceSelector:
     matchLabels:
       app: grafana
-  url: "https://raw.githubusercontent.com/upikoth/argocd-firebat/refs/heads/main/applications/grafana/dashboards/k3s-cluster-monitoring.json"
+  url: "https://raw.githubusercontent.com/upikoth/argocd-firebat/refs/heads/main/applications/grafana/dashboards/cluster-monitoring.json"
