@@ -3,6 +3,7 @@ kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-node-exporter
 spec:
+  folder: "General"
   instanceSelector:
     matchLabels:
       app: grafana
@@ -13,6 +14,7 @@ kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-k3s-nodes
 spec:
+  folder: "General"
   instanceSelector:
     matchLabels:
       app: grafana
