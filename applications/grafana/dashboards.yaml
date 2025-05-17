@@ -15,6 +15,9 @@ metadata:
   name: grafana-dashboard-cluster-monitoring
 spec:
   folder: "General"
+  datasources:
+    - inputName: "DS_PROMETHEUS"
+      datasourceName: "prometheus"
   instanceSelector:
     matchLabels:
       app: grafana
