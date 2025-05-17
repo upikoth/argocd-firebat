@@ -14,14 +14,17 @@ rules:
       - pods
       - configmaps
     verbs: ["get", "list", "watch"]
+
   - apiGroups:
       - extensions
     resources:
       - ingresses
     verbs: ["get", "list", "watch"]
+
   - apiGroups: ["networking.k8s.io"]
     resources:
       - ingresses
     verbs: ["get", "list", "watch"]
+
   - nonResourceURLs: ["/metrics"]
     verbs: ["get"]
