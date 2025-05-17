@@ -3,7 +3,7 @@ kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-node-monitoring
 spec:
-  folder: "My Folder"
+  folder: "General"
   instanceSelector:
     matchLabels:
       app: grafana
@@ -14,7 +14,7 @@ kind: GrafanaDashboard
 metadata:
   name: grafana-dashboard-cluster-monitoring
 spec:
-  folder: "My Folder"
+  folder: "General"
   instanceSelector:
     matchLabels:
       app: grafana
