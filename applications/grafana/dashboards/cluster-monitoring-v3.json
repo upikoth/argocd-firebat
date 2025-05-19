@@ -1026,10 +1026,23 @@
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 4,
-          "legendFormat": "{{ namespace}}",
+          "legendFormat": "{{ namespace}} in use",
           "metric": "network",
           "refId": "A",
           "step": 10
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "editorMode": "code",
+          "expr": "sum(kube_pod_container_resource_requests{node=~\"^$Node$\",namespace=~\"$Namespace\", resource=\"cpu\"}) by (namespace)",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{namespace}} requests",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "CPU use by namespace",
@@ -1127,10 +1140,23 @@
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 4,
-          "legendFormat": "{{ namespace}}",
+          "legendFormat": "{{ namespace}} in use",
           "metric": "network",
           "refId": "A",
           "step": 10
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${datasource}"
+          },
+          "editorMode": "code",
+          "expr": "sum(kube_pod_container_resource_requests{node=~\"^$Node$\",namespace=~\"$Namespace\", resource=\"memory\"}) by (namespace)",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "{{namespace}} requests",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "Memory use by namespace",
