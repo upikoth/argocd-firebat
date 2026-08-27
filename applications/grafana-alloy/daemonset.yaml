@@ -14,7 +14,7 @@ spec:
       serviceAccountName: grafana-alloy-service-account
       containers:
         - name: grafana-alloy-container
-          image: grafana/alloy:v1.8.3
+          image: grafana/alloy:v1.19.2
           args:
             - run
             - /etc/agent/config.alloy
